@@ -8,6 +8,6 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_DB: ib
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: topjava
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
