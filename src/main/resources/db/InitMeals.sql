@@ -8,7 +8,7 @@ CREATE TABLE meals (
     user_id  INTEGER NOT NULL,
     dateTime TIMESTAMP NOT NULL,
     description VARCHAR (200) NOT NULL,
-    calories TIMESTAMP NOT NULL,
+    calories INTEGER NOT NULL,
     CONSTRAINT user_meal_id UNIQUE (user_id, dateTime),
     FOREIGN KEY (user_id) REFERENCES users(id);
 );

@@ -42,11 +42,12 @@ public class JdbcMealRepository implements MealRepository {
                 .addValue("id", meal.getId())
                 .addValue("description", meal.getDescription())
                 .addValue("calories", meal.getCalories())
-                .addValue("user_id",userId);
+                .addValue("user_id", userId)
+                .addValue("dateTime", meal.getDateTime());
 
         if (meal.isNew()) {
-                Number newKey = simpleJdbcInsert.executeAndReturnKey(map);
-                meal.setId(newKey.intValue());
+                jdbcTemplate.update("INSERT INTO meals (user_id,description,calories,dateTime) VALUES (?,?,?,?)",userId,
+                        meal.getDescription(), meal.getCalories(), meal.getDateTime());
         }
 
         return meal;
@@ -65,7 +66,7 @@ public class JdbcMealRepository implements MealRepository {
 
     @Override
     public List<Meal> getAll(int userId) {
-        return jdbcTemplate.query("SELECT * FROM meals WHERE user_id = ?", ROW_MAPPER,userId);
+        return jdbcTemplate.query("SELECT * FROM meals WHERE user_id = ?", ROW_MAPPER);
     }
 
     @Override
