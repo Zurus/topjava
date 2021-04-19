@@ -17,7 +17,7 @@ import java.time.LocalTime;
 
 @NamedQueries({
         @NamedQuery(name = Meal.DELETE, query = "DELETE FROM Meal m WHERE m.id=:id"),
-        @NamedQuery(name=Meal.GET_ALL, query = "SELECT m FROM Meal m WHERE m.user_id=:user_id")
+        //@NamedQuery(name=Meal.GET_ALL, query = "SELECT m FROM Meal m WHERE m.user_id=:userId")
 })
 @Entity
 @Table(name="meals", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id","date_time"}, name = "meals_unique_user_datetime_idx")})
