@@ -90,23 +90,7 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>${spring-data-jpa.version}</version>
-        </dependency>
 
-        <!--- ORM -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
-        </dependency>
 
         <!--http://hibernate.org/validator/documentation/getting-started/#unified-expression-language-el-->
         <dependency>
@@ -214,18 +198,47 @@
             </activation>
         </profile>
 
+<!--        https://habr.com/ru/sandbox/27207/-->
+<!--        https://javatutorial.net/how-to-use-maven-profiles-->
+<!--        https://maven.apache.org/guides/introduction/introduction-to-profiles.html-->
         <profile>
             <id>jdbc</id>
-
-
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+            </dependencies>
         </profile>
+
         <profile>
             <id>jpa</id>
+            <dependencies>
+                <!--- ORM -->
+                <dependency>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-core</artifactId>
+                    <version>${hibernate.version}</version>
+                </dependency>
+                <dependency>
+                    <groupId>org.hibernate.validator</groupId>
+                    <artifactId>hibernate-validator</artifactId>
+                    <version>${hibernate-validator.version}</version>
+                </dependency>
 
+            </dependencies>
         </profile>
+
         <profile>
             <id>datajpa</id>
-
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.data</groupId>
+                    <artifactId>spring-data-jpa</artifactId>
+                    <version>${spring-data-jpa.version}</version>
+                </dependency>
+            </dependencies>
         </profile>
 
 
