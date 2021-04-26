@@ -12,4 +12,8 @@ import ru.javawebinar.topjava.service.MealServiceTest;
  */
 @ActiveProfiles(Profiles.JDBC)
 public class JDBCMealServiceTest extends MealServiceTest {
+    @Override
+    public void get() {
+        super.get();
+    }
 }
