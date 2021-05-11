@@ -17,7 +17,7 @@ import javax.annotation.PostConstruct;
 @SpringJUnitWebConfig(locations = {
         "classpath:spring/spring-app.xml",
         "classpath:spring/spring-mvc.xml",
-        "classpath:spring/spring-db.x ml"
+        "classpath:spring/spring-db.xml"
 })
 //@WebAppConfiguration
 //@ExtendWith(SpringExtension.class)

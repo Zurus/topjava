@@ -16,6 +16,7 @@
         <button type="submit"><spring:message code="common.select"/></button>
     </form>
 </section>
+<%--<p>${pageContext.request.contextPath}</p>--%>
 <jsp:include page="fragments/footer.jsp"/>
 </body>
 </html>
